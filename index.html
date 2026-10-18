@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Study Planner | Student Dashboard</title>
+<link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<header><a class="brand" href="#dashboard">📚 Study Planner</a><nav><a href="#dashboard">Dashboard</a><a href="#tasks">My Tasks</a><a href="#add-task">Add Task</a></nav></header>
+<main class="container">
+<section class="hero"><div><p class="eyebrow">YOUR PERSONAL STUDY SPACE</p><h1>Plan your studies.<br><span>Achieve your goals.</span></h1><p>Organize your university tasks, track your progress, and stay on top of every deadline.</p></div><div class="hero-icon">📚</div></section>
+<section id="dashboard"><p class="eyebrow">YOUR OVERVIEW</p><h2>Your Dashboard</h2><div class="stats"><article><p>Total Tasks</p><strong id="totalTasks">0</strong><small>All your study tasks</small></article><article><p>Pending Tasks</p><strong id="pendingTasks">0</strong><small>Still to be completed</small></article><article><p>Completed</p><strong id="completedTasks">0</strong><small>Tasks you have finished</small></article><article><p>Due Today</p><strong id="dueToday">0</strong><small>Tasks due today</small></article></div></section>
+<section id="add-task" class="panel"><p class="eyebrow">STAY ORGANIZED</p><h2>Add a New Task</h2><form id="taskForm"><div class="form-grid">
+<label>Task Name<input id="taskTitle" required maxlength="120" placeholder="e.g. Database assignment"></label>
+<label>Subject<input id="taskSubject" required maxlength="100" placeholder="e.g. Database Fundamentals"></label>
+<label>Deadline<input id="taskDate" type="date" required></label>
+<label>Priority<select id="taskPriority"><option>Low</option><option selected>Medium</option><option>High</option></select></label>
+<label class="full">Notes (Optional)<textarea id="taskNotes" rows="3" maxlength="500" placeholder="Add details about your task..."></textarea></label>
+</div><div class="buttons"><button id="submitButton" type="submit">+ Add Task</button><button id="cancelEdit" type="button" class="secondary" hidden>Cancel Edit</button></div></form></section>
+<section id="tasks"><div class="heading"><div><p class="eyebrow">YOUR STUDY SCHEDULE</p><h2>My Tasks</h2></div><span id="taskCount">0 tasks</span></div>
+<div class="toolbar"><input id="searchTasks" type="search" placeholder="Search tasks or subjects..."><select id="filterStatus"><option value="All">All Tasks</option><option value="Pending">Pending</option><option value="Completed">Completed</option></select><select id="sortTasks"><option value="date">Sort by Deadline</option><option value="priority">Sort by Priority</option><option value="newest">Newest First</option></select></div>
+<div id="taskList" class="task-list"></div><div id="emptyState" class="empty"><div>📝</div><h3>No tasks yet</h3><p>Add your first study task to get started!</p></div></section>
+</main><footer>Study Planner © <span id="currentYear"></span><p>Built to make studying simpler.</p></footer>
+</body></html>
